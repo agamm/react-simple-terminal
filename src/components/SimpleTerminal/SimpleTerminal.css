@@ -14,5 +14,5 @@
 	color: inherit;
 	font-size: inherit;
 	background-color: inherit;
-    --tw-ring-color: transperent;
+    --tw-ring-color: transparent  !important;;
 }
