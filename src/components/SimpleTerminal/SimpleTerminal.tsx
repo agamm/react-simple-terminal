@@ -78,7 +78,7 @@ export default function SimpleTerminal({
                 {prompt}
                 <input
                     type="text"
-                    className="input-console outline-none focus:ring-0 border-transparent focus:border-transparent"
+                    className="input-console"
                     autoFocus
                     onKeyUp={handleKey}
                     onChange={handleKey}
