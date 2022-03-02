@@ -1,12 +1,12 @@
 import React, { useEffect, useCallback, useRef } from "react";
-
+import './SimpleTerminal.css';
 
 type CommandFunc = ((arg: string[]) => string) | (() => string)
 interface Commands {
     [key: string]: CommandFunc | String;
 }
 
-type CSS = { [key: string]: React.CSSProperties };
+type CSS = { [key: string]: number | string };
 
 const generateOutput = (
     commands: Commands,
@@ -24,7 +24,7 @@ const generateOutput = (
 
 export default function SimpleTerminal({
     commands,
-    prompt,
+    prompt = "$",
     style,
 }: {
     commands: Commands;
