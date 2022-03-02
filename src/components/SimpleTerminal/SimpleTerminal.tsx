@@ -53,6 +53,8 @@ export default function SimpleTerminal({
 
     // Handle new command sent
     const handleKey = useCallback((e) => {
+        console.log("a")
+        debugger;
         if (e.target.name === "Enter") {
             const cmd = e.target.value;
             const logLine: HTMLParagraphElement = document.createElement("p");
