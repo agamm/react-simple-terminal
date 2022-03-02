@@ -40,7 +40,7 @@ export default function SimpleTerminal({
             ...commands,
             clear: () => {
                 if(history && history.current)
-                    history.current.textContent = "";
+                    history.current.innerText = "";
                 return ""
             },
         };
@@ -53,9 +53,7 @@ export default function SimpleTerminal({
 
     // Handle new command sent
     const handleKey = useCallback((e) => {
-        console.log("a")
-        debugger;
-        if (e.target.name === "Enter") {
+        if (e.code === "Enter") {
             const cmd = e.target.value;
             const logLine: HTMLParagraphElement = document.createElement("p");
             generateOutput(mergedCommands, cmd, cmd.split(" ").slice(1)).then(
@@ -63,8 +61,9 @@ export default function SimpleTerminal({
                     if (!logLine) return;
                     logLine.innerText = out;
                     history?.current?.appendChild(logLine);
+                    console.log(input)
                     if(input && input.current)
-                        input.current.textContent = "";
+                        input.current.value = "";
                 }
             );
         }
