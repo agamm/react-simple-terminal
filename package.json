@@ -1,6 +1,6 @@
 {
   "name": "@agamm/react-simple-terminal",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A simplistic react terminal component.",
   "scripts": {
     "rollup": "rollup -c",
@@ -19,6 +19,7 @@
     "react": "^17.0.2",
     "rollup": "^2.69.0",
     "rollup-plugin-dts": "^4.1.0",
+    "rollup-plugin-import-css": "^3.0.2",
     "typescript": "^4.6.2"
   },
   "main": "dist/cjs/index.js",
