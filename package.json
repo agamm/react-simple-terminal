@@ -1,6 +1,6 @@
 {
-  "name": "react-simple-terminal",
-  "version": "1.0.0",
+  "name": "@agamm/react-simple-terminal",
+  "version": "1.0.1",
   "description": "A simplistic react terminal component.",
   "scripts": {
     "rollup": "rollup -c",
@@ -26,5 +26,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/agamm"
+  }
 }

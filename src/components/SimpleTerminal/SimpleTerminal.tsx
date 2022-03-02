@@ -1,21 +1,25 @@
 import React, { useEffect, useCallback, useRef } from "react";
 
+
+type CommandFunc = ((arg: string[]) => string) | (() => string)
 interface Commands {
-    [key: string]: Function;
+    [key: string]: CommandFunc | String;
 }
 
 type CSS = { [key: string]: React.CSSProperties };
 
-const generateOutput = async (
+const generateOutput = (
     commands: Commands,
     cmd: string,
     params: string[]
 ): Promise<string> => {
-    return new Promise((resolve) => {
-        if (commands[cmd] === undefined)
-            return resolve(`Command ${cmd} not found!`);
-        resolve(commands[cmd](params) ?? `Command ${cmd} returned an error!`);
-    });
+    if (commands[cmd] === undefined)
+        return Promise.resolve(`Command ${cmd} not found!`);
+    if(typeof commands[cmd] === "string")
+        return Promise.resolve(commands[cmd] as string)
+
+    const func : CommandFunc = commands[cmd] as CommandFunc;
+    return Promise.resolve(func(params) ?? `Command ${cmd} returned an error!`);
 };
 
 export default function SimpleTerminal({
@@ -37,6 +41,7 @@ export default function SimpleTerminal({
             clear: () => {
                 if(history && history.current)
                     history.current.textContent = "";
+                return ""
             },
         };
     }, []);
