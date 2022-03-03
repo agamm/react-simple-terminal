@@ -76,7 +76,6 @@ export default function SimpleTerminal({
     return (
         <div className="terminal" style={style} onClick={focus}>
             <div className="history" ref={history}>
-                123
             </div>
             <div className="input-section">
                 {prompt}
