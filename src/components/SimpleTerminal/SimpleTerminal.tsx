@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback, useRef } from "react";
 import './SimpleTerminal.css';
 
-type CommandFunc = ((arg: string[]) => string) | (() => string)
+type CommandFunc = ((arg: string[]) => string) | (() => string) | (() => Promise<string>)
 interface Commands {
     [key: string]: CommandFunc | String;
 }
@@ -51,12 +51,16 @@ export default function SimpleTerminal({
         input?.current?.focus();
     }, []);
 
+    const focus = useCallback(() => {
+        input?.current?.focus();
+    }, []);
+
     // Handle new command sent
     const handleKey = useCallback((e) => {
         if (e.code === "Enter") {
             const cmd = e.target.value;
             const logLine: HTMLParagraphElement = document.createElement("p");
-            generateOutput(mergedCommands, cmd, cmd.split(" ").slice(1)).then(
+            generateOutput(mergedCommands, cmd.split(" ")[0], cmd.split(" ").slice(1)).then(
                 (out) => {
                     if (!logLine) return;
                     logLine.innerText = out;
@@ -70,7 +74,7 @@ export default function SimpleTerminal({
     }, []);
 
     return (
-        <div className="terminal" style={style}>
+        <div className="terminal" style={style} onClick={focus}>
             <div className="history" ref={history}>
                 123
             </div>

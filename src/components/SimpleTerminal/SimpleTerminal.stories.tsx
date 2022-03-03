@@ -5,6 +5,12 @@ export default {
     title: "SimpleTerminal"
 };
 
-export const Primary = () => <SimpleTerminal commands={{'help': () => 'HELP!?\n123'}} prompt="$" 
+export const Primary = () => <SimpleTerminal commands={
+    {
+        'str': 'Test?',
+        'help': (args) => `HELP for args: ${args}`,
+        'test': async() => (await fetch("https://wtfismyip.com/text")).text()
+    }} 
+    prompt="$" 
     style={{color: "#00ff00"}} />;
 

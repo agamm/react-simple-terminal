@@ -12,7 +12,8 @@
 	outline: 0 none;
 	border: 0;
 	color: inherit;
+	width: 90%;
 	font-size: inherit;
 	background-color: inherit;
-    --tw-ring-color: transparent  !important;;
+    --tw-ring-color: transparent  !important;
 }

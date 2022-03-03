@@ -4,6 +4,11 @@
 - Super simplistic
 - Stylable
 - Fixes tailwind outline border on focus.
+- Allows async functions
+
+### Demo
+- [c]()
+- [agam.me](https://agam.me)
 
 ### Install 
 `npm install --save @agamm/react-simple-terminal`
@@ -12,13 +17,15 @@
 ```jsx
 import { SimpleTerminal } from '@agamm/react-simple-terminal'
 
-
-const commands = {
-    help: () => `Initialized commands: help, ls`,
-    ls: () => 'Try using `help`, you hacker...',
+const App = () => {
+  const commands = {
+    hello: 'Hello world!',
+    'help': (args) => `HELP for args: ${args}`,
+    test: async() => (await fetch("https://wtfismyip.com/text")).text()
   }
 
   return (
-    <div className="hero">
       <SimpleTerminal commands={commands} prompt={'$'} style={{ color: '#00ff00' }} />
+  )
+}
 ```
