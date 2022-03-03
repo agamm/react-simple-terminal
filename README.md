@@ -7,7 +7,6 @@
 - Allows async functions
 
 ### Demo
-- [c]()
 - [agam.me](https://agam.me)
 
 ### Install 
