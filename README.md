@@ -8,6 +8,7 @@
 
 ### Demo
 - [agam.me](https://agam.me)
+- [CodeSandbox](https://codesandbox.io/s/lingering-haze-09pb05?file=/src/App.js)
 
 ### Install 
 `npm install --save react-simple-terminal`
