@@ -1,5 +1,5 @@
 {
-  "name": "@agamm/react-simple-terminal",
+  "name": "react-simple-terminal",
   "version": "1.0.15",
   "description": "A simplistic react terminal component.",
   "scripts": {
@@ -38,9 +38,6 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/agamm"
-  },
   "dependencies": {
     "@storybook/addon-postcss": "^2.0.0"
   }

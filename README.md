@@ -14,7 +14,7 @@
 
 ### Usage
 ```jsx
-import { SimpleTerminal } from '@agamm/react-simple-terminal'
+import { SimpleTerminal } from 'react-simple-terminal'
 
 const App = () => {
   const commands = {
