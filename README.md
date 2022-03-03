@@ -10,7 +10,7 @@
 - [agam.me](https://agam.me)
 
 ### Install 
-`npm install --save @agamm/react-simple-terminal`
+`npm install --save react-simple-terminal`
 
 ### Usage
 ```jsx
