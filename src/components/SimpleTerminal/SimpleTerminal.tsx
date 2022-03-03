@@ -57,7 +57,7 @@ export default function SimpleTerminal({
 
     // Handle new command sent
     const handleKey = useCallback((e) => {
-        if (e.code === "Enter") {
+        if (e.code === "Enter" || e.key === 'Enter') {
             const cmd = e.target.value;
             const logLine: HTMLParagraphElement = document.createElement("p");
             generateOutput(mergedCommands, cmd.split(" ")[0], cmd.split(" ").slice(1)).then(
