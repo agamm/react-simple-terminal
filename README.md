@@ -3,7 +3,7 @@
 - Mobile friendly
 - Super simplistic
 - Stylable
-- Fixes tailwind outline border on focus.
+- Fixes tailwind outline border on focus
 - Allows async functions
 
 ### Demo
